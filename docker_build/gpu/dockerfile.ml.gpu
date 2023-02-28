@@ -1,0 +1,8 @@
+FROM --platform=amd64 registry.cn-hangzhou.aliyuncs.com/zjuici-aix/aia-ml-gpu-base:v0.1.0 as base
+
+WORKDIR /app
+
+
+COPY . /app
+
+RUN pip install -r /app/docker_build/gpu/gpu_requirements.txt -i https://mirrors.aliyun.com/pypi/ --no-cache-dir 
