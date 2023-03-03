@@ -37,8 +37,11 @@ FROM rapid-runtime as pytorch
 ENV TORCH_VERSION=1.10.1+cu111
 ENV TORCHVISION_VERSION=0.11.2+cu111
 ENV TORCHAUDIO_VERSION=0.10.1
-RUN python3 -m pip install --upgrade pip --no-cache-dir && \ 
-    python3 -m pip --default-timeout=1000 install torch==${TORCH_VERSION} torchvision==${TORCHVISION_VERSION} torchaudio==${TORCHAUDIO_VERSION} -f https://download.pytorch.org/whl/torch_stable.html
+#RUN python3 -m pip install --upgrade pip --no-cache-dir && \ 
+#    python3 -m pip --default-timeout=1000 install torch==${TORCH_VERSION} torchvision==${TORCHVISION_VERSION} torchaudio==${TORCHAUDIO_VERSION} -f https://download.pytorch.org/whl/torch_stable.html
+
+
+RUN conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge
 
 # LightGBM
 RUN apt install -y ocl-icd-libopencl1 ocl-icd-opencl-dev
