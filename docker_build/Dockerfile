@@ -37,7 +37,7 @@ FROM rapid-runtime as pytorch
 ENV TORCH_VERSION=1.10.1+cu111
 ENV TORCHVISION_VERSION=0.11.2+cu111
 ENV TORCHAUDIO_VERSION=0.10.1
-RUN python3 -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple/ --no-cache-dir && \ 
+RUN python3 -m pip install --upgrade pip --no-cache-dir && \ 
     python3 -m pip --default-timeout=1000 install torch==${TORCH_VERSION} torchvision==${TORCHVISION_VERSION} torchaudio==${TORCHAUDIO_VERSION} -f https://download.pytorch.org/whl/torch_stable.html
 
 # LightGBM
