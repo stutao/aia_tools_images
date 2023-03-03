@@ -1,7 +1,7 @@
 FROM --platform=linux/amd64 rapidsai/rapidsai-core:23.02-cuda11.8-base-ubuntu22.04-py3.8 as rapid-runtime
 
 # set LD_LIBRARY_PATH
-ENV LD_LIBRARY_PATH=/usr/local/cuda-11.2/compat:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH=/usr/local/cuda-11.8/compat:$LD_LIBRARY_PATH
 
 ENV CUDA_HOME /usr/local/cuda
 ENV LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:${CUDA_HOME}/lib64
